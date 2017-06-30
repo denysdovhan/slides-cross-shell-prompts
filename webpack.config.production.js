@@ -23,7 +23,7 @@ module.exports = {
       compressor: {
         warnings: false
       }
-    })
+    }),
   ],
   module: {
     loaders: [{
