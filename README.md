@@ -1,21 +1,18 @@
-# Spectacle Boilerplate
+# slides-cross-shell-prompts [![Build Status][travis-image]][travis-url]
 
-## Reference
+> Slides for my talk about JavaScript Shells
 
-The Spectacle core API is available at [https://github.com/FormidableLabs/spectacle/blob/master/README.markdown](https://github.com/FormidableLabs/spectacle/blob/master/README.markdown).
+## Scripts
 
-## Development
+* `npm start` — start up the [local server](http://localhost:3000).
+* `npm build` — build the presentation in `dist` folder
+* `npm deploy` — build the presentation and deploy at [GitHub Pages](https://pages.github.com/)
+* `npm lint` — check all files via [ESLint](eslint.org)
+* `npm clean` — clean `dist` folder
 
-After downloading the boilerplate, your first order of business is to open terminal and run `yarn`. (or `npm install` if you're about that life)
+## License
 
-Next, run `rm -R .git` to remove the existing version control.
+MIT © [Denys Dovhan](http://denysdovhan.com)
 
-Then, to start up the local server, run `npm start`
-
-Open a browser and hit [http://localhost:3000](http://localhost:3000), and we are ready to roll
-
-## Build & Deployment
-
-Building the dist version of the project is as easy as running `npm run build`
-
-If you want to deploy the slideshow to surge, run `npm run deploy`
+[travis-url]: https://travis-ci.org/denysdovhan/slides-cross-shell-prompts
+[travis-image]: https://img.shields.io/travis/denysdovhan/slides-cross-shell-prompts.svg?style=flat-square
