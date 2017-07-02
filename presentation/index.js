@@ -255,6 +255,11 @@ export default class Presentation extends React.Component {
           <Text margin="1rem auto">Немає ніяких пакетних менеджерів</Text>
         </Slide>
 
+        <Slide>
+          <Heading size={2} textColor="yellow">Проблеми з інсталяцією</Heading>
+          <Text margin="1rem auto">Складно автоматизувати інсталяцію</Text>
+        </Slide>
+
         <Slide bgImage={images.boredMorty} bgDarken={0.3}>
           {/* Everyone is bored. */}
         </Slide>
@@ -328,6 +333,27 @@ function escapeNonPrintable(shell) {
     }
   };
 }
+            `}
+          />
+        </Slide>
+
+        <Slide>
+          <Heading size={2} textColor="pink">Адаптер</Heading>
+        </Slide>
+
+        <Slide bgColor="#2D2D2D">
+          <CodePane
+            lang="js"
+            textSize="1.5rem"
+            source={`
+# BASH-specific adapter
+prompt_bash_atapter() {
+  prompt_previous_exit_code="$?"
+  prompt 'bash' $prompt_previous_exit_code
+}
+
+# set prompt
+PS1='$(prompt_bash_atapter)'
             `}
           />
         </Slide>
@@ -467,6 +493,10 @@ function escapeNonPrintable(shell) {
 
         <Slide>
           <Heading>Питання?</Heading>
+        </Slide>
+
+        <Slide>
+          <Heading>У мене є стікери! 😃</Heading>
         </Slide>
 
       </Deck>
