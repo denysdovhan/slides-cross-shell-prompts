@@ -1,4 +1,4 @@
-# slides-cross-shell-prompts [![Build Status][travis-image]][travis-url]
+# slides-cross-shell-prompts
 
 > Slides for my talk about JavaScript Shells
 
@@ -13,6 +13,3 @@
 ## License
 
 MIT © [Denys Dovhan](http://denysdovhan.com)
-
-[travis-url]: https://travis-ci.org/denysdovhan/slides-cross-shell-prompts
-[travis-image]: https://img.shields.io/travis/denysdovhan/slides-cross-shell-prompts.svg?style=flat-square
