@@ -123,6 +123,18 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide>
+          <Heading size={2}>Розминка</Heading>
+        </Slide>
+
+        <Slide>
+          <Heading size={2}>Підняли праву руку</Heading>
+        </Slide>
+
+        <Slide>
+          <Heading size={2}>Підняли ліву руку</Heading>
+        </Slide>
+
+        <Slide>
           <Heading size={2}>Що таке <span style={{ color: colors.green }}>prompt</span>?</Heading>
         </Slide>
 
@@ -306,6 +318,13 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide>
+          <Heading size={2} textColor="blue">
+            Проблеми стилізації
+          </Heading>
+          <Text margin="1rem auto">У нас проблеми з бібліотеками для стилізації в терміналі</Text>
+        </Slide>
+
+        <Slide>
           <Image src={images.brokenEscaping} width="100%" />
         </Slide>
 
@@ -323,13 +342,13 @@ export default class Presentation extends React.Component {
  *  @link: http://stackoverflow.com/a/30581694/5508862
  */
 function escapeNonPrintable(shell) {
-  return (ansiCode) => {
+  return (asciiCode) => {
     switch (shell) {
       case 'sh'  :
-      case 'bash': return '\\001' + ansiCode + '\\002';
-      case 'zsh' : return   '%{' + ansiCode + '%}'  ;
-      case 'fish': return          ansiCode         ;
-      default    : return          ansiCode         ;
+      case 'bash': return '\\001' + asciiCode + '\\002';
+      case 'zsh' : return   '%{' + asciiCode + '%}'  ;
+      case 'fish': return          asciiCode         ;
+      default    : return          asciiCode         ;
     }
   };
 }
@@ -343,7 +362,7 @@ function escapeNonPrintable(shell) {
 
         <Slide bgColor="#2D2D2D">
           <CodePane
-            lang="js"
+            lang="bash"
             textSize="1.5rem"
             source={`
 # BASH-specific adapter
@@ -354,6 +373,18 @@ prompt_bash_atapter() {
 
 # set prompt
 PS1='$(prompt_bash_atapter)'
+            `}
+          />
+        </Slide>
+
+        <Slide bgColor="#2D2D2D">
+          <CodePane
+            lang="bash"
+            textSize="3rem"
+            source={`
+$ source ./adapter.bash
+# or
+$ . ./adapter.bash
             `}
           />
         </Slide>
