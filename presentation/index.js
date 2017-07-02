@@ -15,7 +15,8 @@ import {
   Cite,
   List,
   ListItem,
-  Appear
+  Appear,
+  CodePane
 } from "spectacle";
 
 // Import image preloader util
@@ -44,7 +45,9 @@ const images = {
   spaceshipPreview: require("../assets/spaceship-preview.gif"),
   summerRainbow: require("../assets/summer-rainbow.gif"),
   boredMorty: require("../assets/bored-morty.gif"),
+  brokenEscaping: require("../assets/broken-escaping.gif"),
   evilRick: require("../assets/evil-rick.gif"),
+  tweet: require("../assets/tweet.png"),
   dubdub: require("../assets/dubdub.gif")
 };
 
@@ -294,11 +297,35 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide>
-          [слайд з кодом про проблеми chalk]
+          <Image src={images.brokenEscaping} width="100%" />
         </Slide>
 
-        <Slide>
-          [код адаптерів]
+        <Slide bgColor="#2D2D2D">
+          <CodePane
+            lang="js"
+            textSize="1.25rem"
+            source={`
+/**
+ * Escape non-printable characters
+ * Otherwise readline cannot keep track of the cursor position correctly
+ *
+ * Related issues:
+ *  @link: http://stackoverflow.com/a/19501528/5508862
+ *  @link: http://stackoverflow.com/a/30581694/5508862
+ */
+function escapeNonPrintable(shell) {
+  return (ansiCode) => {
+    switch (shell) {
+      case 'sh'  :
+      case 'bash': return '\\001' + ansiCode + '\\002';
+      case 'zsh' : return   '%{' + ansiCode + '%}'  ;
+      case 'fish': return          ansiCode         ;
+      default    : return          ansiCode         ;
+    }
+  };
+}
+            `}
+          />
         </Slide>
 
         <Slide>
@@ -380,11 +407,15 @@ export default class Presentation extends React.Component {
         </Slide>
 
         <Slide>
-          [проксі-шел або C імплементація]
+          <Heading size={2} textColor="pink">Проксі-шел</Heading>
         </Slide>
 
         <Slide>
-          [тред з Sindre Sorhus]
+          <Heading size={2} textColor="green">С імплементація</Heading>
+        </Slide>
+
+        <Slide>
+          <Image src={images.tweet} width="75%" />
         </Slide>
 
         <Slide>
