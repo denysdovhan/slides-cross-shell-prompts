@@ -51,6 +51,10 @@ const images = {
   dubdub: require("../assets/dubdub.gif")
 };
 
+Object.keys(images).forEach((image) => {
+  images[image] = images[image].replace("/", "");
+});
+
 preloader(images);
 
 const colors = {
